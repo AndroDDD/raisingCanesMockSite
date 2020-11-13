@@ -6,12 +6,13 @@ import history from "../history/history";
 import { ConnectedRouter } from "connected-react-router";
 
 import FrontPage from "../features/Interfaces/Desktop/FrontPage/FrontPage"
+import MobileFrontPage from "../features/Interfaces/Mobile/MobileFrontPage/MobileFrontPage"
 
 export const isMobile = checkIfMobileBrowser();
 
 export const store = configureStore();
 
-export const dataBaseUrl = ``
+export const dataBaseUrl = isMobile ? `http://192.168.1.144:5000/randomData/` : `http://localhost:5000/randomData/`
 
 function checkIfMobileBrowser() {
   let check = false;
@@ -70,7 +71,7 @@ const RoutesComposed = () => {
               component={
                 isMobile
                   ? () => {
-                      return <FrontPage />
+                      return <MobileFrontPage />
                     }
                   : () => {
                       return <FrontPage />;

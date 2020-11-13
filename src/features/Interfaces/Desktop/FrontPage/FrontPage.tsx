@@ -15,6 +15,78 @@ import { dataBaseUrl } from "../../../../routes/routerBlock";
 
 import "./FrontPageStyles.scss";
 
+// Declare function handling image resize
+export const handleImageResize = (
+  event: any,
+  containerHeight: number,
+  containerWidth: number
+) => {
+  let imgContainerHeight = containerHeight;
+  let imgContainerWidth = containerWidth;
+  let actualImageHeight = event.currentTarget.naturalHeight;
+  let actualImageWidth = event.currentTarget.naturalWidth;
+
+  if (actualImageHeight < actualImageWidth) {
+    // Handle resize for landscape
+    let imgHeightRatio = imgContainerHeight / actualImageHeight;
+    let reconfiggedWidth = imgHeightRatio * actualImageWidth;
+
+    if (reconfiggedWidth > imgContainerWidth) {
+      let imgWidthRatio = imgContainerWidth / reconfiggedWidth;
+      let reconfiggedHeight = imgWidthRatio * imgContainerHeight;
+      event.currentTarget.height = reconfiggedHeight;
+      event.currentTarget.width = imgContainerWidth;
+      console.log({
+        widthClarified: `reconfiggedWidth > imgContainerWidth`,
+        imgWidthRatio,
+        reconfiggedHeight,
+      });
+    } else {
+      console.log(`reconfiggedWidth < imgContainerWidth`);
+      event.currentTarget.height = imgContainerHeight;
+      event.currentTarget.width = reconfiggedWidth;
+    }
+    console.log({
+      imgResizeType: `imgResize landscape`,
+      imgHeightRatio,
+      reconfiggedWidth,
+    });
+  } else if (actualImageWidth < actualImageHeight) {
+    // Handle resize for portrait
+    let imgWidthRatio = imgContainerWidth / actualImageWidth;
+    let reconfiggedHeight = imgWidthRatio * actualImageHeight;
+    if (reconfiggedHeight > imgContainerHeight) {
+      let imgHeightRatio = imgContainerHeight / reconfiggedHeight;
+      let reconfiggedWidth = imgHeightRatio * imgContainerWidth;
+      event.currentTarget.height = imgContainerHeight;
+      event.currentTarget.width = reconfiggedWidth;
+      console.log({
+        heightClarified: `reconfiggedHeight > imgContainerHeight`,
+        imgHeightRatio,
+        reconfiggedWidth,
+      });
+    } else {
+      event.currentTarget.height = reconfiggedHeight;
+      event.currentTarget.width = imgContainerWidth;
+      console.log(`reconfiggedHeight < imgContainerHeight`);
+    }
+    console.log({
+      imgResizeType: `imgResize portrait`,
+      imgWidthRatio,
+      reconfiggedHeight,
+    });
+  }
+  console.log({
+    imgContainerHeight,
+    imgContainerWidth,
+    actualImageHeight,
+    actualImageWidth,
+  });
+};
+
+////////////////////////
+////////////////////////
+
 // Declare Function Component handling app processes and views
 const CharacterData: React.FC = () => {
   // Handle screen resize view updates
@@ -115,16 +187,6 @@ const CharacterData: React.FC = () => {
     middleContentLeft: `middleContentLeft`,
     middleContentMiddle: `middleContentMiddle`,
     middleContentRight: `middleContentRight`,
-    sectionLabel: `sectionLabel`,
-    titleNinfoBundle: `titleNinfoBundle`,
-    bundleTitle: `bundleTitle`,
-    bundleInfo: `bundleInfo`,
-    titleNinfoBundlev2: `titleNinfoBundlev2`,
-    bundleTitlev2: `bundleTitlev2`,
-    bundleInfov2: `bundleInfov2`,
-    titleNinfoBundlev3: `titleNinfoBundlev3`,
-    bundleTitlev3: `bundleTitlev3`,
-    bundleInfov3: `bundleInfov3`,
     bottomContent: `bottomContent`,
     bottomContentMostLeft: `bottomContentMostLeft`,
     bottomContentMiddleLeft: `bottomContentMiddleLeft`,
@@ -135,6 +197,16 @@ const CharacterData: React.FC = () => {
     companyTrademarkInfo: `companyTrademarkInfo`,
     footerBar: `footerBar`,
     clickableImage: `clickableImage`,
+    sectionLabel: `sectionLabel`,
+    titleNinfoBundle: `titleNinfoBundle`,
+    bundleTitle: `bundleTitle`,
+    bundleInfo: `bundleInfo`,
+    titleNinfoBundlev2: `titleNinfoBundlev2`,
+    bundleTitlev2: `bundleTitlev2`,
+    bundleInfov2: `bundleInfov2`,
+    titleNinfoBundlev3: `titleNinfoBundlev3`,
+    bundleTitlev3: `bundleTitlev3`,
+    bundleInfov3: `bundleInfov3`,
     genericText: styles2.genericText,
   });
 
@@ -144,6 +216,7 @@ const CharacterData: React.FC = () => {
       `${dataBaseUrl}images/5131480feb87051b5ce8df49985d1796-RestaurantRecovery_WebSiteSlider.jpg`,
       `${dataBaseUrl}images/c1baa50ec14008eff8f82a2b83626629-22801_SystemwideRecruiting_WebSlider.jpg`,
       `${dataBaseUrl}images/b44977f9e882be9451e111f7df048193-22935-Football-Web-Slider.jpg`,
+      `${dataBaseUrl}images/822a6161833e4e0480f351aa06989387-21059_VeteransObs_WebSlider.jpg`,
     ];
   });
   // Declare variable holding current slide show image index
@@ -207,75 +280,6 @@ const CharacterData: React.FC = () => {
         return slideShowImgIteration + 1;
       });
     }, 5000);
-  };
-
-  // Declare function handling image resize
-  const handleImageResize = (
-    event: any,
-    containerHeight: number,
-    containerWidth: number
-  ) => {
-    let imgContainerHeight = containerHeight;
-    let imgContainerWidth = containerWidth;
-    let actualImageHeight = event.currentTarget.naturalHeight;
-    let actualImageWidth = event.currentTarget.naturalWidth;
-
-    if (actualImageHeight < actualImageWidth) {
-      // Handle resize for landscape
-      let imgHeightRatio = imgContainerHeight / actualImageHeight;
-      let reconfiggedWidth = imgHeightRatio * actualImageWidth;
-
-      if (reconfiggedWidth > imgContainerWidth) {
-        let imgWidthRatio = imgContainerWidth / reconfiggedWidth;
-        let reconfiggedHeight = imgWidthRatio * imgContainerHeight;
-        event.currentTarget.height = reconfiggedHeight;
-        event.currentTarget.width = imgContainerWidth;
-        console.log({
-          widthClarified: `reconfiggedWidth > imgContainerWidth`,
-          imgWidthRatio,
-          reconfiggedHeight,
-        });
-      } else {
-        console.log(`reconfiggedWidth < imgContainerWidth`);
-        event.currentTarget.height = imgContainerHeight;
-        event.currentTarget.width = reconfiggedWidth;
-      }
-      console.log({
-        imgResizeType: `imgResize landscape`,
-        imgHeightRatio,
-        reconfiggedWidth,
-      });
-    } else if (actualImageWidth < actualImageHeight) {
-      // Handle resize for portrait
-      let imgWidthRatio = imgContainerWidth / actualImageWidth;
-      let reconfiggedHeight = imgWidthRatio * actualImageHeight;
-      if (reconfiggedHeight > imgContainerHeight) {
-        let imgHeightRatio = imgContainerHeight / reconfiggedHeight;
-        let reconfiggedWidth = imgHeightRatio * imgContainerWidth;
-        event.currentTarget.height = imgContainerHeight;
-        event.currentTarget.width = reconfiggedWidth;
-        console.log({
-          heightClarified: `reconfiggedHeight > imgContainerHeight`,
-          imgHeightRatio,
-          reconfiggedWidth,
-        });
-      } else {
-        event.currentTarget.height = reconfiggedHeight;
-        event.currentTarget.width = imgContainerWidth;
-        console.log(`reconfiggedHeight < imgContainerHeight`);
-      }
-      console.log({
-        imgResizeType: `imgResize portrait`,
-        imgWidthRatio,
-        reconfiggedHeight,
-      });
-    }
-    console.log({
-      imgContainerHeight,
-      imgContainerWidth,
-      actualImageHeight,
-      actualImageWidth,
-    });
   };
 
   // Handle view manipulation on page scroll
@@ -380,7 +384,7 @@ const CharacterData: React.FC = () => {
           .to(curSlideShowImageDisplayRef.current, {
             right: "0%",
             duration: 3,
-            delay: -3,
+            delay: -2.9,
           })
           .call(() => {
             handleImageSwitch();
@@ -821,7 +825,7 @@ const CharacterData: React.FC = () => {
                         .set(curSlideShowImageDisplayRef.current, {
                           position: "relative",
                           top: "0%",
-                          right: "-100%",
+                          right: "-105%",
                         })
                         .to(prevSlideShowImageDisplayRef.current, {
                           left: "-105%",
@@ -830,7 +834,7 @@ const CharacterData: React.FC = () => {
                         .to(curSlideShowImageDisplayRef.current, {
                           right: "0%",
                           duration: 3,
-                          delay: -3,
+                          delay: -2.8,
                         });
                     }}
                   >

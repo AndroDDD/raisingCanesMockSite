@@ -1,0 +1,620 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandstander&display=swap"); // "Grandstander"
+
+.mockSiteTitle {
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: slategrey;
+  color: cyan;
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.mobileHeaderBarContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 50px;
+}
+
+.mobileHeaderBar {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    black,
+    90%,
+    rgba(231, 201, 169, 1)
+  );
+}
+
+.mobileHeaderBarLeftSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 25%;
+  height: 100%;
+}
+
+.mobileHeaderBarRightSide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 75%;
+  height: 100%;
+}
+
+.mobileNavMenuIcon {
+  height: 75%;
+  object-fit: contain;
+}
+
+.mobileExtendedNavMenu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-image: linear-gradient(to bottom, rgb(231, 201, 169), red, black);
+  opacity: 0;
+  z-index: 10;
+}
+
+.mobileExtendedMenuListItemButton {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 30px;
+  background-image: linear-gradient(to top, black, 90%, beige);
+  border: 2px solid beige;
+  border-top: none;
+  color: beige;
+  font-family: "Grandstander", cursive;
+  cursor: pointer;
+}
+
+.mobileExtendedMenuListItemButton:hover {
+  color: rgb(238, 135, 1);
+}
+
+.mobileLocationIcon {
+  height: 70%;
+  margin-left: 1px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.mobileFoodMenuIcon {
+  height: 70%;
+  margin-left: 10px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.mobileOrderNowButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 75%;
+  margin-right: 5px;
+  margin-left: 10px;
+  padding-top: 3px;
+  box-shadow: 0px 0px 5px 2px rgba(231, 201, 169, 0.9);
+  border-radius: 5px;
+  background-color: red;
+  color: whitesmoke;
+  text-align: center;
+  text-shadow: 0px 0px 4px rgba(231, 201, 169, 1);
+  font-family: "Grandstander", cursive;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.mobileLogoIconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobileLogoIcon {
+}
+
+.mobileSlideShow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px;
+  width: 100%;
+  height: 300px;
+}
+
+.mobileSlideShowImageDisplay {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 92%;
+  background-color: rgba(240, 216, 1, 0.747);
+  border: 5px solid beige;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.mobileSlideShowLogoImg {
+}
+
+.mobileCurSlideShowImageDisplay {
+  position: relative;
+  top: 0%;
+  right: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.mobilePrevSlideShowImageDisplay {
+  position: relative;
+  top: -100%;
+  left: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.mobileSlideShowImgNav {
+  position: relative;
+  top: -55%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 95%;
+  height: 50px;
+}
+
+.mobileSlideShowImgNavPrev {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.mobileSlideShowImgNavPrevButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  left: 1%;
+  border-radius: 50%;
+  color: black;
+  background-color: beige;
+  border: 1px solid rgba(209, 20, 20, 1);
+  cursor: pointer;
+}
+
+.mobileSlideShowImgNavPrevButton:hover {
+  color: beige;
+  background-color: rgba(209, 20, 20, 1);
+  border: 3px solid black;
+}
+
+.mobileSlideShowImgNavNext {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.mobileSlideShowImgNavNextButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  right: 1%;
+  border-radius: 50%;
+  color: black;
+  background-color: beige;
+  border: 1px solid rgba(209, 20, 20, 1);
+  cursor: pointer;
+}
+
+.mobileSlideShowImgNavNextButton:hover {
+  color: beige;
+  background-color: rgba(209, 20, 20, 1);
+  border: 3px solid black;
+}
+
+.mobileSlideShowImgIndexIndicator {
+  position: relative;
+  top: -12.7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 15px;
+}
+
+.mobileSlideShowImgIndicatorButton {
+  margin-left: 2px;
+  margin-right: 2px;
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(95, 158, 160, 1);
+  cursor: pointer;
+}
+
+.mobileSlideShowImgIndicatorButton:hover {
+  background-color: seashell;
+}
+
+.mobileSlideShowCurImgIndexIndicatorButton {
+  margin-left: 2px;
+  margin-right: 2px;
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(209, 20, 20, 1);
+  cursor: pointer;
+}
+
+.mobileSlideShowImgPause {
+  position: relative;
+  top: -28%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.mobileSlideShowImgPauseButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  color: black;
+  background-color: beige;
+  border: 1px solid rgba(209, 20, 20, 1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mobileSlideShowImgPauseButton:hover {
+  color: beige;
+  background-color: rgba(209, 20, 20, 1);
+  border: 3px solid black;
+}
+
+.mobileRandomImage {
+}
+
+.linkedImagesContainer {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.linkedImage {
+  width: 100%;
+  max-width: 600px;
+  object-fit: contain;
+}
+
+.mobileMiddleContent {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.mobileMiddleContentLeft {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 95%;
+  height: 490px;
+  border: 2px solid rgb(255, 115, 0);
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 3px 5px 3px rgba(95, 158, 160, 0.75);
+  overflow-y: auto;
+}
+
+.mobileMiddleContentMiddle {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 95%;
+  height: 490px;
+  border: 2px solid rgb(255, 115, 0);
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 3px 5px 3px rgba(95, 158, 160, 0.75);
+  overflow-y: auto;
+}
+
+.mobileMiddleContentRight {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 95%;
+  height: 700px;
+  border: 2px solid rgb(255, 115, 0);
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 3px 5px 3px rgba(95, 158, 160, 0.75);
+  overflow: hidden;
+}
+
+.mobileBottomContentMostRightLabel {
+  width: 100%;
+  margin-top: 7px;
+  margin-bottom: 10px;
+  padding-left: 3px;
+  display: flex;
+  justify-content: center;
+  color: rgb(4, 209, 199);
+  text-align: center;
+  text-shadow: 0px 0px 2px rgb(172, 64, 2);
+  font-family: "Grandstander", cursive;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.mobileBottomContent {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: #59595c;
+  box-shadow: 0px 0px 5px 1px burlywood;
+  border-radius: 5px;
+}
+
+.mobileBottomContentMostLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.mobileBottomContentMiddleLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.mobileBottomContentMiddleRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.mobileBottomContentMostRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.mobileSectionLabel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4px;
+  padding-bottom: 2px;
+  width: 100%;
+  color: beige;
+  background-color: rgb(236, 2, 2);
+  border-radius: 3px;
+  text-align: center;
+  font-family: "Grandstander", cursive;
+  font-weight: 700;
+}
+
+.mobileTitleNinfoBundle {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.mobileBundleTitle {
+  margin-top: 7px;
+  margin-bottom: 2px;
+  padding-left: 3px;
+  display: flex;
+  justify-content: flex-start;
+  color: rgb(236, 214, 10);
+  text-align: center;
+  text-shadow: 0px 0px 2px rgb(45, 187, 223);
+  text-decoration: underline;
+  font-family: "Grandstander", cursive;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.mobileBundleTitle:hover {
+  color: rgb(10, 236, 168);
+}
+
+.mobileBundleInfo {
+  margin-top: 5px;
+  margin-bottom: 7px;
+  display: flex;
+  justify-content: flex-start;
+  color: aliceblue;
+  text-align: center;
+  font-family: "Grandstander", cursive;
+  font-weight: 400;
+}
+
+.mobileTitleNinfoBundlev2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.mobileBundleTitlev2 {
+  width: 100%;
+  margin-top: 7px;
+  margin-bottom: 2px;
+  padding-left: 3px;
+  display: flex;
+  justify-content: center;
+  color: rgb(4, 209, 199);
+  text-align: center;
+  text-shadow: 0px 0px 2px rgb(172, 64, 2);
+  font-family: "Grandstander", cursive;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.mobileBundleTitlev2:hover {
+  color: rgb(224, 44, 44);
+  text-shadow: 0px 0px 2px rgb(27, 116, 9);
+}
+
+.mobileBundleInfov2 {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 7px;
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+  text-align: center;
+  font-family: "Grandstander", cursive;
+  font-weight: 100;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.mobileBundleInfov2:hover {
+  text-decoration: underline;
+  color: rgba(231, 201, 169, 1);
+}
+
+.mobileTitleNinfoBundlev3 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.mobileBundleTitlev3 {
+  margin-top: 7px;
+  margin-bottom: 2px;
+  padding-left: 3px;
+  display: flex;
+  justify-content: flex-start;
+  color: rgb(236, 214, 10);
+  text-align: center;
+  text-shadow: 0px 0px 2px rgb(45, 187, 223);
+  font-family: "Grandstander", cursive;
+  font-weight: 500;
+}
+
+.mobileBundleInfov3 {
+  margin-top: 5px;
+  margin-bottom: 7px;
+  display: flex;
+  justify-content: flex-start;
+  color: aliceblue;
+  text-align: center;
+  font-family: "Grandstander", cursive;
+  font-weight: 400;
+}
+
+.mobileSocialMediaIcons {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.mobileCompanyTrademarkInfo {
+  width: 98%;
+  margin-top: 15px;
+  margin-bottom: 7px;
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+  text-align: center;
+  font-family: "Grandstander", cursive;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.mobileFooterBar {
+  padding-top: 5px;
+  padding-bottom: 3px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  bottom: 0px;
+  background-color: rgba(236, 2, 2, 0.5);
+  color: beige;
+  font-family: "Grandstander", cursive;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mobileFooterBar:hover {
+  background-color: rgb(236, 2, 2);
+}
+
+.mobileClickableImage {
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
