@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, Dimensions } from "react-native";
+import { FacebookProvider, Feed } from "react-facebook";
 import { Timeline } from "react-twitter-widgets";
 import {
   ArrowBackIosRounded,
@@ -261,6 +262,11 @@ const CharacterData: React.FC = () => {
   // Declare variable holding mouse position when interacting with button menu list
   const [mousePositions, setMousePositons] = React.useState({ x: 0, y: 0 });
 
+  // Declare variabel holding facebook iframe key
+  const [facebookIFrameKey, setFacebookIFrameKey] = React.useState(() => {
+    return Math.random() * 100;
+  });
+
   // Declare refs for data extraction and manipulation
   let gsapTlRef = React.useRef<any>();
   let subMainDisplayRef = React.useRef<any>();
@@ -395,6 +401,13 @@ const CharacterData: React.FC = () => {
       }
     }
   }, [slideShowImgIteration]);
+
+  // Handle facebook iframe reload
+  React.useEffect(() => {
+    setFacebookIFrameKey(() => {
+      return Math.random() * 100;
+    });
+  }, [middleContentRightRef.current]);
 
   // Handle component return view
   return (
@@ -1181,6 +1194,7 @@ Denver, CO 80246`}</div>
             >
               <div className={styles.sectionLabel}>{`FACEBOOK`}</div>
               <iframe
+                key={facebookIFrameKey}
                 src={`https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRaisingCanesChickenFingers%2F&tabs=timeline&width=${
                   middleContentRightRef.current
                     ? `${middleContentRightRef.current.offsetWidth}`
