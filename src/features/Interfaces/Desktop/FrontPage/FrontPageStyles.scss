@@ -1,13 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Grandstander&display=swap"); // "Grandstander"
 
+.mockTitle {
+  width: 100%;
+  height: 2%;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: slategrey;
+  color: cyan;
+  font-family: monospace;
+  font-size: 90%;
+  font-weight: 700;
+}
+
 .subMainDisplay {
   box-sizing: border-box;
   padding-bottom: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 95%;
+  width: 100%;
   min-width: 980px;
+  height: 98%;
   border: 1px solid rgba(0, 15, 85, 1);
   background-image: url("http://192.168.1.144:5000/randomData/images/617f196f0689f03bcfa3f06d17c03abd-raisingCanesBackwall.jpg");
   background-size: cover;
@@ -629,7 +644,7 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 11px;
+  bottom: 0px;
   background-color: rgba(236, 2, 2, 0.5);
   color: beige;
   font-family: "Grandstander", cursive;

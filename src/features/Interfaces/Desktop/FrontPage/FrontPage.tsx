@@ -140,6 +140,7 @@ const CharacterData: React.FC = () => {
       minWidth: "980px",
       height: screenHeight,
     },
+    mockTitle: `mockTitle`,
     subMainDisplay: `subMainDisplay`,
     headerBar: `headerBar`,
     headerNavButtonContainer: `headerNavButtonContainer`,
@@ -398,6 +399,7 @@ const CharacterData: React.FC = () => {
   // Handle component return view
   return (
     <View style={[styles.mainDisplay, styles.mainDisplaySupport]}>
+      <div className={styles.mockTitle}>{`Raising Canes Mock Site`}</div>
       <div ref={subMainDisplayRef} className={styles.subMainDisplay}>
         <div className={styles.headerBar}>
           <div className={styles.headerNavButtonContainer}>
@@ -1367,8 +1369,6 @@ Denver, CO 80246`}</div>
 // Declare stylesheet for react native components
 const styles2 = StyleSheet.create({
   mainDisplay: {
-    paddingTop: "10px",
-    paddingBottom: "10px",
     justifyContent: "center",
     alignItems: "center",
     borderWidth: 1,
