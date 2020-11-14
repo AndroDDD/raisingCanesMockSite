@@ -34,9 +34,10 @@
   padding-top: 2px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   min-width: 980px;
+  height: 30px;
   background-image: linear-gradient(
     to bottom,
     black,
@@ -80,11 +81,10 @@
 }
 
 .extendedMenuListDisplay {
-  position: absolute;
-  top: 27px;
+  position: relative;
+  top: -16px;
   display: none;
   flex-direction: column;
-
   z-index: 10;
 }
 
@@ -93,7 +93,8 @@
 }
 
 .extendedMenuListItemButton {
-  height: 30px;
+  padding-top: 5px;
+  padding-bottom: 2px;
   background-image: linear-gradient(to top, black, 90%, beige);
   border: 2px solid beige;
   border-top: none;
@@ -108,6 +109,7 @@
 
 .headerOrderButton {
   height: 25px;
+  margin-top: 2px;
   padding-top: 3px;
   position: relative;
   top: -2px;
